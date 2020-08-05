@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//     - history
+//     - document - image, link, layer,....
+//                - form - text,password,textarea
+//                        - checkbox, radio
+//                        - select            - option
+
+// window.document.폼이름.텍스트상자이름.변수  type name value
+//        document.fr.txt.type
+//        document.fr.txt.name
+//        document.fr.txt.value
+// window.document.폼이름.텍스트상자이름.함수()
+//        document.fr.txt.focus();
+//        document.fr.txt.blur();
+//        document.fr.txt.select();
+function fun1() {
+	alert(document.fr.txt.type);
+	alert(document.fr.txt.name);
+	alert(document.fr.txt.value);
+}
+function fun2() {
+	// 텍스트 상자 포커스 
+	document.fr.txt.focus(); //깜밖
+	document.fr.txt.blur();  //해제
+	document.fr.txt.select();  //글자선택 ,블럭
+}
+function fun3() {
+	// if 텍스트 상자가 비어있으면
+	// (value변수가 비어있으면 / value변수가 ""공백이랑 같으면) 
+	// "텍스트 입력하세요"
+	if(document.fr.txt.value == ""){
+		alert("텍스트 입력하세요"); 
+		// 텍스트 상자에 포커스
+		document.fr.txt.focus();
+	}else if(document.fr.pass.value == ""){
+		// 비밀번호 입력하세요
+		alert("비밀번호 입력하세요"); 
+		// 비밀번호 상자 포커스
+		document.fr.pass.focus();
+	}else if(document.fr.tx.value == ""){
+		// 긴텍스트 입력하세요
+		alert("긴텍스트 입력하세요"); 
+		// 긴텍스트 상자 포커스
+		document.fr.tx.focus();
+	}else{
+		// a.jsp 이동 전송
+		document.fr.submit();
+	}
+}
+function fun4() {
+	// value에 저장된 글자  => 문자  개수 
+	// 문자열내장객체.변수    문자열.length
+	// 문자열내장객체.함수()
+// 	alert("문자열".length);
+// 	alert(document.fr.txt.value.length);
+	
+	if(document.fr.txt.value.length==0){
+		alert("텍스트 입력하세요"); 
+		// 텍스트 상자에 포커스
+		document.fr.txt.focus();
+		// 수행하고 끝내겠다 (함수호출하는곳으로 이동,되돌아감 )
+		return;
+	}
+	
+// 텍스트 상자 글자수 5자 아니면  !=  "텍스트 5자 입력하세요" 포커스 되돌아감
+	if(document.fr.txt.value.length != 5){
+		alert("텍스트 5자 입력하세요"); 
+		// 텍스트 상자에 포커스
+		document.fr.txt.focus();
+		// 수행하고 끝내겠다 (함수호출하는곳으로 이동,되돌아감 )
+		return;
+	}
+	
+// 	if(document.fr.txt.value == ""){
+// 		alert("텍스트 입력하세요"); 
+// 		// 텍스트 상자에 포커스
+// 		document.fr.txt.focus();
+// 		// 수행하고 끝내겠다 (함수호출하는곳으로 이동,되돌아감 )
+// 		return;
+// 	}
+	if(document.fr.pass.value == ""){
+		// 비밀번호 입력하세요
+		alert("비밀번호 입력하세요"); 
+		// 비밀번호 상자 포커스
+		document.fr.pass.focus();
+		return;
+	}
+	// 비밀번호  글자수 4~7 사이가 아니면 "비밀번호 4~7자 입니다." 포커스 되돌아감
+	// 글자수가 4보다 작은 경우  또는  글자수 7보다 큰 경우
+	// ! (글자수가 4보다 크거나 같고 동시에 글자수 7보다 작거나 같은 경우) 의 반대
+	p = document.fr.pass.value.length;
+// 	if(p<4 || p>7){
+// 		alert("비밀번호 4~7자 입니다."); 
+// 		document.fr.pass.focus();
+// 		return;
+// 	}
+	if(!(p>=4 && p<=7)){
+		alert("비밀번호 4~7자 입니다."); 
+		document.fr.pass.focus();
+		return;
+	}
+	
+	
+	if(document.fr.tx.value == ""){
+		// 긴텍스트 입력하세요
+		alert("긴텍스트 입력하세요"); 
+		// 긴텍스트 상자 포커스
+		document.fr.tx.focus();
+		return;
+	}
+	
+		// a.jsp 이동 전송
+		document.fr.submit();
+	return;
+}
+</script>
+</head>
+<body>
+<h1>js3/test3.html</h1>
+<form action="a.jsp" method="get" name="fr">
+텍스트 : <input type="text" name="txt"><br>
+비밀번호 : <input type="password" name="pass"><br>
+긴텍스트 : <textarea name="tx" rows="10" cols="20"></textarea><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="버튼2" onclick="fun2()">
+<input type="button" value="버튼3" onclick="fun3()">
+<input type="button" value="버튼4" onclick="fun4()">
+</form>
+</body>
+</html>

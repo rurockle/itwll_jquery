@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+
+
+$(document).ready(function(){
+	// [1]AJAX 
+	// 대상 파일 string1.jsp
+	// $.ajax('페이지명',속성값);
+	$.ajax('string1.jsp',{// string1.jsp 페이지에 갔다가 돌아옴
+		success:function(returndata){ //함수 안의 변수명은 아무거나
+			// 'string1.jsp'에서 받은 출력값을 'body'태그 뒷부분에 추가
+			$('body').append(returndata);
+		}
+	}); 
+	
+	// [2] btn클릭했을 때 테이블로 데이터 가져오기
+	$('#btn').click(function(){
+		$.ajax('string1.jsp',{// string1.jsp 페이지에 갔다가 돌아옴
+			success:function(returndata){ //함수 안의 변수명은 아무거나
+				// 'string1.jsp'에서 받은 출력값을 'body'태그 뒷부분에 추가
+				$('table').append('<tr><td>'+returndata+'</td></tr>');
+				
+			}
+		}); 
+		// [3]이벤트종료는 해당 이벤트(click)가 종료되는 곳 위에서 실행
+		$(this).unbind();	 
+	});
+	
+	
+});
+</script>
+
+
+</head>
+<body>
+<h1>string1.html/js_jQuery2</h1>
+<table border="1">
+
+<tr><td>출력값</td></tr>
+</table>
+
+<input type="button" value="데이터가져오기" id="btn">
+
+</body>
+</html>

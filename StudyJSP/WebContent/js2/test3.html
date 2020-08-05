@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//       - history
+//       - document - image, link, layer,....
+//                  - form - text,password,textarea
+//                         - checkbox, radio
+//                         - select            - option
+
+// window.history.변수          history.length 방문기록개수
+// window.history.함수()   history.back() 뒤로이동
+//                        history.forward() 앞으로 이동
+//                        history.go(-1) 한칸 뒤로이동  
+//                        history.go(1)  한칸 앞으로 이동
+function fun1() {
+	alert(history.length);
+}
+function fun2() {
+	alert('뒤로이동');
+	history.back();
+}
+function fun3() {
+	history.forward();
+}
+</script>
+</head>
+<body>
+<h1>js2/test3.html</h1>
+<input type="button" value="방문기록개수" onclick="fun1()"> 
+<input type="button" value="뒤로한칸이동" onclick="fun2()">
+<input type="button" value="앞으로한칸이동" onclick="fun3()">
+</body>
+</html>
+
+
+
+
+

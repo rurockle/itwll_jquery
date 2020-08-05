@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 내장함수  이름 호출해서 사용
+// function alert(s) {
+// 	//창을 만들고 창안에 s변수에 저장된 메시지 출력
+// 	  return;
+// }
+//  함수이름("출력하고자하는 값");
+// 	alert("메시지 출력");
+
+//   confirm 확인true 취소false를 선택해서 결과값을 리턴받는 함수
+// 	alert(confirm("확인 취소를 선택하세요"));
+
+// 	var a = confirm("확인 취소를 선택하세요");
+// 	alert(a); //true/false
+// 	// 제어문 ,조건문 : 조건에 따라 2개중에 1개선택
+// 	if(a == true){
+// 		//조건이 참일때 실행문
+// 		alert("확인을 선택하셨네요");
+// 	}else{
+// 		//조건이 거짓(나머지)일때 실행문
+// 		alert("취소를 선택하셨네요");
+// 	}
+	
+	//  confirm "가입하려면 확인 단추를 누르세요"
+	//  if 메시지 출력 확인 "가입해주셔서 감사합니다."
+	//              취소 "다음에 방문해주세요"
+// 	var b=confirm("가입하려면 확인 단추를 누르세요");
+// 	if(b==true){
+// 		alert("가입해주셔서 감사합니다.");
+// 	}else{
+// 		alert("다음에 방문해주세요");
+// 	}
+
+	// 입력값을 리턴받을때
+// 	alert(prompt("입력하세요","값"));
+// 	var c=prompt("입력하세요","값");
+// 	alert(c);     // 문자 5
+// 	alert(c+100); // 5100    문자+숫자 연결자+
+// 	// 문자를 정수형으로 변경해주는 함수
+// 	alert(parseInt(c)+100); //105 숫자+숫자
+// 	alert(c*100); // 500
+	
+// 	var d=prompt("입력하세요","값");
+// 	// 입력받으면 문자 => 숫자문자 false, 순수문자 true
+// 	alert(d);
+// 	// isNaN()  is Not a Number  숫자가 아니냐?
+// 			//    숫자가 아니면(문자이면) true
+// 			//    숫자이면 false
+// 	alert(isNaN(d));	
+// 	// if 입력받은 값이 순수문자이면 "문자을 입력하셨네요"
+// 	//              숫자문자이면 "숫자를 입력하셨네요"
+// 	if(isNaN(d) == true){
+// 		alert("문자을 입력하셨네요");
+// 	}else{
+// 		alert("숫자를 입력하셨네요");
+// 	}
+	
+	// prompt() 값을 입력을 받아서 
+	// if  isNaN()  문자이면  문자 그대로 출력
+	// parseInt()   숫자이면  숫자+100 출력 
+	var e=prompt("입력하세요",""); //"안녕",7
+	var f=isNaN(e); // 문자이면 true/ 숫자이면 false
+	if(f==true){
+		//조건이 true 실행문
+		alert(e);
+	}else{
+		//조건이 false 실행문
+		alert(parseInt(e)+100);
+	}
+	
+	
+</script>
+</head>
+<body>
+<h1>js1/test5.html</h1>
+</body>
+</html>
+
+
+
+

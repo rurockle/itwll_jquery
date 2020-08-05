@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// fun1() 함수 정의   메시지 출력 "안녕하세요"
+function fun1() {
+	alert("안녕하세요");
+	return;
+}
+// fun2() 2번수정 사칙연산 출력 10+20  10-20  10*20  10/20 
+function fun2() {
+	var a=10;
+	var b=20;
+
+	alert(a+b);
+	alert(a-b);
+	alert(a*b);
+	alert(a/b);
+	return;
+}
+//fun3() 수정없이 사칙연산 출력 10+20  10-20  10*20  10/20 
+function fun3(a,b) {
+	alert(a+b);
+	alert(a-b);
+	alert(a*b);
+	alert(a/b);
+	return;
+}
+// fun4() 함수 호출시 두수(가로,세로)를 받아서 사각형의 면적을 구하고 리턴 
+function fun4(w,h) {
+// 	alert(w*h);
+	return w*h;
+// 	return w*h,(w*h)/2;
+	// 리턴값을 무조건 하나
+}
+// fun5(반지름) 원의 면적 반지름*반지름*3.14 => 결과 return
+function fun5(r) {
+	return r*r*3.14;
+}
+</script>
+</head>
+<body>
+<h1>js1/test4.html</h1>
+<input type="button" value="인사말" onclick="fun1()">
+<input type="button" value="사칙연산" onclick="fun2()">
+<input type="button" value="사칙연산2" onclick="fun3(5,7)">
+<input type="button" value="사칙연산3" onclick="fun3(100,200)">
+<input type="button" value="사각형의 면적" onclick="alert(fun4(10,10))">
+<input type="button" value="삼각형의 면적" onclick="alert(fun4(10,10)/2)">
+<input type="button" value="원의 면적" onclick="alert(fun5(10))">
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+
+$(document).ready(function(){
+
+	// [1] ajax을 이용해서 데이터 넘긴 후, 값 가져오기
+// 	$.ajax('string2.jsp',{
+// 		data:{
+// 			name:'홍길동',  //name, age는 속성
+// 			age:20
+			
+// 		},  //넘기고자 하는 값 입력 {데이터 여러 개}
+// 		success:function(returndata){
+// 			//body태그 뒷부분에 추가
+// 			$('body').append(returndata);
+// 		}  // 
+		
+// 	});
+	
+	// [2] 버튼을 클릭했을 때, table 태그 뒷부분에 추가
+	$('#btn').click(function() {
+		$.ajax('string2.jsp',{
+			data:{
+				name:$('#name').val(),
+				age:$('#age').val()
+			},
+			success:function(returndata){
+				$('table').append("<tr><td>"+returndata+"</td></tr>");
+				$('div').html(returndata); // 중복여부 확인
+			}	
+		});
+	});
+});
+</script>
+</head>
+<body>
+<h1>js_jQuery2/string2.html</h1>
+<table border="1">
+<tr><td>출력값</td></tr>
+</table>
+이름 : <input type="text" name="name" id="name"><br>
+나이 : <input type="text" name="age" id="age"><br>
+<div></div> 
+<input type="button" value="데이터가져오기" id="btn">
+</body>
+</html>

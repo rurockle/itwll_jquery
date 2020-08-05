@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//	웹브라우저 내장객체
+//	window - location
+//	       - history
+//	       - document - image, link, layer,....
+//	                  - form - text,password,textarea
+//	                         - checkbox, radio
+//	                         - select            - option
+//  window생략가능
+//  window.location.변수       location.href  주소줄안에 주소를 저장하는 변수
+//  window.location.함수()  location.reload()  새로고침
+function fun1() {
+// 	var a="주소";
+// 	alert(a);
+// 주소줄에 있는 주소를 location.href변수 미리 저장되어있음
+// location.href="http://localhost:8080/StudyJSP/js2/test2.html";
+	alert(location.href)
+}
+function fun2() {
+	// 자바스크립트 하이퍼링크 페이지 이동
+	alert("test1.html로 이동");
+	location.href="test1.html";
+}
+function fun3() {
+	// 새로고침 F5
+	location.reload();
+}
+function fun4() {
+	alert(location.href);
+	alert(location.protocol); // http
+	alert(location.hostname); //localhost
+	alert(location.host); //localhost:8080
+	alert(location.port); //8080
+}
+</script>
+</head>
+<body>
+<h1>js2/test2.html</h1>
+<input type="button" value="주소확인" onclick="fun1()">
+<input type="button" value="test1.html주소변경" onclick="fun2()">
+<input type="button" value="문서새로고침" onclick="fun3()">
+<input type="button" value="주소정보" onclick="fun4()">
+</body>
+</html>
+
+
+
+

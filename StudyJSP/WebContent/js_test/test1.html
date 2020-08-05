@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check() {
+		if (document.fr.name.value == "") {
+			alert("이름을 입력하세요.")
+			document.fr.name.focus();
+			return;
+		}
+
+		if (document.fr.jumin1.value.length !== 6) {
+			alert("주민등록번호 앞자리는 6글자로 입력해주세요.");
+			document.fr.jumin1.focus();
+			return;
+		}
+
+		if (document.fr.jumin2.value.length !== 7) {
+			alert("주민등록번호 뒷자리는 7글자로 입력해주세요.");
+			document.fr.jumin2.focus();
+			return;
+		}
+
+		if (!(document.fr.id.value.length >= 4 && document.fr.id.value.length <= 10)) {
+			alert("아이디는 4~10자로 해주세요.");
+			document.fr.id.focus();
+			return;
+		}
+
+		if (!(document.fr.pass.value.length >= 4 && document.fr.pass.value.length <= 10)) {
+			alert("비밀번호는 4~10자로 해주세요.");
+			document.fr.pass.focus();
+			return;
+		}
+
+		if (document.fr.passCheck.value !== document.fr.pass.value) {
+			alert("비밀번호 확인 해주세요");
+			document.fr.passCheck.focus();
+			return;
+		}
+
+		if (document.fr.phoneNumber.value == "") {
+			alert("전화번호 입력하세요.")
+			document.fr.phoneNumber.focus();
+			return;
+		}
+
+		if (document.fr.grade.options[0].selected == true) {
+			alert("회원등급을 선택해주세요")
+			document.fr.grade.focus();
+			return;
+
+		}
+
+		else {
+			document.fr.submit();
+		}
+	}
+
+	function idCheck() {
+		alert("중복확인 완료")
+	}
+
+	function search() {
+		window.open("test2.html", "우편번호찾기", "width=500, height=500");
+	}
+</script>
+</head>
+<body>
+	<form action="http://www.naver.com" method="get" name="fr">
+		★표시는 반드시 입력하셔야 합니다.<br> ★이름<input type="text" name="name"><br>
+		<br> ★주민등록번호<input type="text" name="jumin1">-<input
+			type="text" name="jumin2"><br> ★회원 ID<input type="text"
+			name="id"><input type="button" value="중복확인"
+			onclick="idCheck()"><br>
+		<br> ★비밀번호<input type="password" name="pass"><br>
+		★비밀번호확인 <input type="password" name="passCheck"><br>
+		E-mail<input type="text"><br> ★전화번호<input type="text"
+			name="phoneNumber"><br> 핸드폰번호<input type="text"><br>
+		우편번호<input type="text">-<input type="text"><input
+			type="button" value="검색" onclick="search()"><br> <input
+			type="text"><br> 상세주소<input type="text"><br>
+		★회원분류<select name="grade">
+			<option value="">선택해 주십시오.</option>
+			<option value="1">1등급</option>
+			<option value="2">2등급</option>
+			<option value="3">3등급</option>
+		</select><br> <input type="button" value="가 입" onclick="check()"><input
+			type="button" value="취 소">
+	</form>
+
+</body>
+</html>

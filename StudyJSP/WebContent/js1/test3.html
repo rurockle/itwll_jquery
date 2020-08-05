@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// 함수 : 자주 사용하는 명령들의 묶음=> 이름을 부여 => 사용할때 이름 호출
+function funname() {
+	alert('메시지1');
+	alert('메시지2');
+	alert('메시지3');
+	alert('메시지4');
+	alert('메시지5');
+	return;
+}
+// x+10  변수x => 결과 출력만 함
+function funname2(x) {
+	alert(x+10);
+	return;
+}
+function funname3() {
+	return "음료수";
+}
+// x+10 => 결과 받기
+function funname4(x) {
+	return x+10;
+}
+</script>
+</head>
+<body>
+<h1>js1/test3.html</h1>
+<input type="button" value="버튼" onclick="funname()">
+<input type="button" value="버튼2" onclick="alert(funname2(5))">
+<input type="button" value="버튼3" onclick="alert(funname3())">
+<input type="button" value="버튼4" onclick="alert(funname4(5)*100)">
+</body>
+</html>
+
+
+
+

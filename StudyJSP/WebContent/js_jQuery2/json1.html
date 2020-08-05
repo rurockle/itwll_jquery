@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+// 		$.getJSON('json1.jsp',function(rdata){
+// 			$.each(rdata,function(index,item){
+// // 				alert(item.id);
+// 				// body뒷부분에 추가 <h3> id, pass,name</h3>
+// 				$('body').append('<h3>'+item.id+', '+item.pass+', '+item.name+'</h3>');
+// 			});
+// 		});
+// 	});
+	//버튼 클릭 했을 때, json1.jsp데이터 가져오기
+	$('#btn').click(function(){
+		$.getJSON('json2.jsp',function(rdata){
+			$.each(rdata,function(index,item){
+
+				//table뒷부분에 추가 
+				$('table').append('<tr><td>'+item.id+'</td><td>'+item.pass+'</td><td>'+item.name+'</td></tr>');
+			});
+		});
+		$(this).unbind();
+	});
+});	
+	
+// 	$('.btn').click(function(){
+// 		var result = document.getElementById('ajaxValue');
+// 		$.ajax({
+// 			url : "json1.jsp",
+// 			dataType : "json",
+// 			success : function(data){
+// 				console.log(result.innerHTML = data.study.ajax);
+// 			},
+// 			error : function(e){
+// 				console.log(e.responseText);
+// 			}
+// 		});
+		
+// 		});
+	
+	
+	
+	
+	
+</script>
+
+
+</head>
+<body>
+<h1>json1.html/js_jQuery2</h1>
+<table border="1">
+
+
+<tr><td>아이디</td><td>비밀번호</td><td>이름</td></tr>
+
+</table>
+<input type="button" value="데이터가져오기" id="btn">
+<input type="button" value="데이터가져오기" class="btn">
+<div id="ajaxValue"></div>
+</body>
+</html>
+

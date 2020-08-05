@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//웹브라우저 내장객체
+//window - location
+//       - history
+//       - document - image, link, layer,....
+//                  - form - text,password,textarea
+//                          - checkbox, radio
+//                          - select            - option
+// window.document.forms[0].변수  action  method name
+// window.document.폼이름.변수
+//            document.forms[0].action
+//            document.forms[0].method
+//            document.forms[0].name
+
+// window.document.forms[0].함수()  submit()   reset()
+// window.document.폼이름.함수()
+//           document.fr.submit()
+//           document.fr.reset()
+function fun1() {
+	alert(document.forms[0].action);
+	alert(document.forms[0].method);
+	alert(document.forms[0].name);
+}
+function fun2() {
+	document.fr.submit();
+}
+function fun3() {
+	// action   b.jsp 변경    // method post 변경 => 전송
+	document.fr.action="b.jsp";
+	document.forms[0].method="post";
+	document.fr.submit();
+}
+function fun4(a) {
+	// 값을 받아서  basket이면  basket.jsp 이동
+	//                아니면 order.jsp 이동   
+	if(a == 'basket'){
+		//조건 이 참일때 실행문
+		document.fr.action="basket.jsp";
+	}else{
+		//조건이 거짓일때 실행문
+		document.fr.action="order.jsp";
+	}
+	document.fr.submit();
+}
+</script>
+</head>
+<body>
+<h1>js3/test2.html</h1>
+<form action="a.jsp" method="get" name="fr">
+<input type="text" name="id"><br>
+<input type="button" value="버튼" onclick="fun1()">
+<input type="button" value="전송버튼" onclick="fun2()">
+<input type="button" value="변경해서전송" onclick="fun3()">
+<input type="button" value="장바구니" onclick="fun4('basket')">
+<input type="button" value="바로구매" onclick="fun4('order')">
+</form>
+</body>
+</html>
+

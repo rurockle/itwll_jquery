@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.5.1.js"></script>
+<script>
+
+// ajax 이용해서 가져오기
+
+// function proc(result){
+	
+// 	$.each(result, function(index,item){
+// 		var str = '<tr><td>'+item.id+'</td>';
+// 		str +='<td>'+item.name+'</td>';
+// 		str +='<td>'+item.pass+'</td>';
+// 		$('table').append(str);
+// 	});
+// }
+
+// $(document).ready(function() {
+
+// 	// json2.jsp에서 데이터를 가져와서 btn 클릭해서 데이터 출력되게
+// $('#btn').click(function(){
+// 		$.ajax('json2.jsp',{
+// 			dataType: 'json',
+// 			success: function(result){
+// 				proc(result);
+				
+// 			}, //success
+// 			error: function(request, status, error){
+// 				var str = 'code: '+request.status+'\n';
+// 				str += 'message: '+request.responseText+'\n';
+// 				str += 'error: '+error;
+// 				alert(str);
+// 			} // error
+// 		});	
+// 		});
+	 $(document).ready(function() {
+	});
+	
+		
+	
+	
+</script>
+</head>
+<body>
+<h1>js_jQuery2/json2.html</h1>
+<table border="1">
+<tr><th>아이디</th><th>비밀번호</th><th>이름</th></tr>
+</table>
+<input type="button" value="데이터가져오기" id="btn">
+
+</body>
+</html>
